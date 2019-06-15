@@ -1,6 +1,9 @@
 import * as angular from 'angular'
 import UsersCtrl from './users/UsersCtrl'
 
+import '../styles/reset.css'
+import './app.scss'
+
 const module = angular.module('angularApp', [])
 
 module.directive('users', () => {

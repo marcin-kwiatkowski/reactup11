@@ -41,6 +41,33 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'html-loader'
+        }, {
+            test: /\.css$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true
+                }
+            }]
+        }, {
+            test: /\.scss$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true
+                }
+            }, {
+                loader: 'sass-loader'
+            }]
+        }, {
+            test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+            use: [{
+                loader: 'file-loader'
+            }]
         }]
     },
     plugins: [
