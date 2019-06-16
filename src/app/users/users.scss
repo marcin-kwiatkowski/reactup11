@@ -17,6 +17,14 @@
     ul {
       overflow: scroll;
       height: calc(100vh - 80px);
+
+      li {
+        background-color: #ffcccc;
+      }
+
+      li:hover {
+        background-color: #ff8080;
+      }
     }
   }
 
