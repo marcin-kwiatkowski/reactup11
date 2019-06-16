@@ -5,7 +5,11 @@
     align-items: stretch;
   }
 
-  .list {
+  .react-list {
+    flex: 0 0 300px;
+  }
+
+  .ng-list {
     flex: 0 0 300px;
 
     .user {

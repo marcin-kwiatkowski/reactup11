@@ -1,15 +1,16 @@
 <div class="users-container" ng-controller="UsersCtrl">
-    <div class="list">
-        <ul>
-            <li class="user"
-                ng-repeat="user in users"
-                ng-click="selectUser(user)"
-                ng-class="{selected: isUserSelected(user)}"
-            >
-                {{user.name + ' ' + user.surname}}
-            </li>
-        </ul>
-    </div>
+    <user-list-root class="react-list"></user-list-root>
+    <!--    <div class="ng-list">-->
+    <!--        <ul>-->
+    <!--            <li class="user"-->
+    <!--                ng-repeat="user in users"-->
+    <!--                ng-click="selectUser(user)"-->
+    <!--                ng-class="{selected: isUserSelected(user)}"-->
+    <!--            >-->
+    <!--                {{user.name + ' ' + user.surname}}-->
+    <!--            </li>-->
+    <!--        </ul>-->
+    <!--    </div>-->
     <div class="details">
         <div ng-if="!selectedUser" class="nothing-selected">
             Please select a person from the list.

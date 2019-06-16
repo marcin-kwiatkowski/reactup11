@@ -1,11 +1,26 @@
 import { actionTypes } from '../users/usersActions'
 
-const initialState = {
+export interface User {
+    [key: string]: any
+
+    id: string
+    name: string
+    surname: string
+    age: number
+    email: string
+}
+
+export interface UsersState {
+    map: { [key: string]: User },
+    selected: User | null
+}
+
+const initialState: UsersState = {
     map: {},
     selected: null
 }
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: any) => {
     switch (action.type) {
         case actionTypes.usersUpdated: {
             const map = Object.assign({}, state.map)

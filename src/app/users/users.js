@@ -3,6 +3,8 @@ import './users.scss'
 import { fetchUsers, selectUser } from './usersActions'
 import { getSelectedUser, getUsers } from './usersSelectors'
 import { reduxChangeListener } from '../store/reduxListener'
+import { react2angular } from 'react2angular'
+import UserListRoot from '../roots/UserListRoot'
 
 (function () {
     const module = angular.module('angularApp')
@@ -34,4 +36,6 @@ import { reduxChangeListener } from '../store/reduxListener'
             $ngRedux.dispatch(selectUser(user))
         }
     })
+
+    module.component('userListRoot', react2angular(UserListRoot, [], []))
 })();
