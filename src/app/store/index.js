@@ -15,7 +15,6 @@ let reducersMap = {
 
 // Angular reducers
 const module = angular.module('angularApp')
-console.log(module)
 module.config(($ngReduxProvider, reducersProvider) => {
     const ngReducers = reducersProvider.$get()
     if (ngReducers) {

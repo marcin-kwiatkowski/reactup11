@@ -1,7 +1,7 @@
 import angular from 'angular'
 import './users.scss'
-import { fetchUsers } from './usersActions'
-import { getUsers } from './usersSelectors'
+import { fetchUsers, selectUser } from './usersActions'
+import { getSelectedUserId, getUsers } from './usersSelectors'
 
 (function () {
     const module = angular.module('angularApp')
@@ -18,8 +18,10 @@ import { getUsers } from './usersSelectors'
     module.controller('UsersCtrl', ($scope, $ngRedux) => {
         $scope.users = getUsers($ngRedux.getState())
 
-        $scope.test = user => {
-            console.error(user)
+        $scope.isUserSelected = user => user && user.id === getSelectedUserId($ngRedux.getState())
+
+        $scope.selectUser = user => {
+            $ngRedux.dispatch(selectUser(user))
         }
     })
 })();

@@ -1,7 +1,8 @@
 import { actionTypes } from '../users/usersActions'
 
 const initialState = {
-    map: {}
+    map: {},
+    selectedId: null
 }
 
 export default (state = initialState, action) => {
@@ -12,7 +13,17 @@ export default (state = initialState, action) => {
                 map[user.id] = user
             })
             return {
+                ...state,
                 map
+            }
+        }
+        case actionTypes.userSelected: {
+            const userId = action.payload
+            if (state.map[userId]) {
+                return {
+                    ...state,
+                    selectedId: userId
+                }
             }
         }
         default:

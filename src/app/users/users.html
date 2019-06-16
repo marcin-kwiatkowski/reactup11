@@ -3,7 +3,8 @@
         <ul>
             <li class="user"
                 ng-repeat="user in users"
-                ng-click="test(user)"
+                ng-click="selectUser(user)"
+                ng-class="{selected: isUserSelected(user)}"
             >
                 {{user.name + ' ' + user.surname}}
             </li>

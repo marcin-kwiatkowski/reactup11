@@ -1,5 +1,6 @@
 export const actionTypes = {
-    usersUpdated: 'users-updated'
+    usersUpdated: 'users-updated',
+    userSelected: 'user-selected'
 }
 
 export const fetchUsers = () => dispatch => {
@@ -7,5 +8,12 @@ export const fetchUsers = () => dispatch => {
     dispatch({
         type: actionTypes.usersUpdated,
         payload: users
+    })
+}
+
+export const selectUser = (user) => dispatch => {
+    dispatch({
+        type: actionTypes.userSelected,
+        payload: user.id
     })
 }
