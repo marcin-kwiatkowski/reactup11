@@ -11,6 +11,11 @@
         </ul>
     </div>
     <div class="details">
-        details
+        <div ng-if="!selectedUser">
+            nie ma
+        </div>
+        <div ng-if="selectedUser">
+            jest
+        </div>
     </div>
 </div>

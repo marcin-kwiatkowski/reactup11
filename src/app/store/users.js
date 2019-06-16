@@ -2,7 +2,7 @@ import { actionTypes } from '../users/usersActions'
 
 const initialState = {
     map: {},
-    selectedId: null
+    selected: null
 }
 
 export default (state = initialState, action) => {
@@ -18,13 +18,14 @@ export default (state = initialState, action) => {
             }
         }
         case actionTypes.userSelected: {
-            const userId = action.payload
-            if (state.map[userId]) {
+            const user = action.payload
+            if (state.map[user.id]) {
                 return {
                     ...state,
-                    selectedId: userId
+                    selected: user
                 }
             }
+            return state
         }
         default:
             return state

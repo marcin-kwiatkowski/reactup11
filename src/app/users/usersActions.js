@@ -14,6 +14,6 @@ export const fetchUsers = () => dispatch => {
 export const selectUser = (user) => dispatch => {
     dispatch({
         type: actionTypes.userSelected,
-        payload: user.id
+        payload: user
     })
 }

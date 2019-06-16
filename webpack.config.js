@@ -27,15 +27,15 @@ module.exports = {
             test: /\.tsx?$/,
             exclude: /node_modules/,
             use: [{
-                loader: 'ts-loader',
-                options: {
-                    transpileOnly: true
-                }
-            }, {
                 loader: 'babel-loader',
                 query: {
                     cacheDirectory: true,
                     presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+            }, {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true
                 }
             }]
         }, {

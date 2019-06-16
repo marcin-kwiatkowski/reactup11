@@ -1,7 +1,8 @@
 import angular from 'angular'
 import './users.scss'
 import { fetchUsers, selectUser } from './usersActions'
-import { getSelectedUserId, getUsers } from './usersSelectors'
+import { getSelectedUser, getUsers } from './usersSelectors'
+import { reduxChangeListener } from '../store/reduxListener'
 
 (function () {
     const module = angular.module('angularApp')
@@ -18,7 +19,16 @@ import { getSelectedUserId, getUsers } from './usersSelectors'
     module.controller('UsersCtrl', ($scope, $ngRedux) => {
         $scope.users = getUsers($ngRedux.getState())
 
-        $scope.isUserSelected = user => user && user.id === getSelectedUserId($ngRedux.getState())
+        $scope.isUserSelected = user => {
+            const selectedUser = getSelectedUser($ngRedux.getState())
+            return user && selectedUser && user.id === selectedUser.id
+        }
+
+        $ngRedux.subscribe(reduxChangeListener($ngRedux, (state) => getSelectedUser(state),
+            (selectedUser) => {
+                $scope.selectedUser = selectedUser
+            }
+        ))
 
         $scope.selectUser = user => {
             $ngRedux.dispatch(selectUser(user))
