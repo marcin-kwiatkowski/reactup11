@@ -11,7 +11,7 @@ html, body {
   }
 
   .app-menu {
-      flex: 0 0 80px;
+    flex: 0 0 80px;
   }
 
   .app-menu-button {
@@ -26,7 +26,8 @@ html, body {
   }
 
   .app-users {
-      flex: 1;
+    flex: 1;
+    display: flex;
   }
 
   .angular-js {
@@ -35,6 +36,11 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60px;
+  }
+
+  .container {
+    flex: 1;
+    display: flex;
   }
 }
 

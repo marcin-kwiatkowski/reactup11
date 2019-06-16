@@ -1,0 +1,15 @@
+:global {
+  .users-container {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .list {
+    flex: 0 0 300px;
+  }
+
+  .details {
+    flex: 1;
+  }
+}
