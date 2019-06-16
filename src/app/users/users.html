@@ -11,11 +11,28 @@
         </ul>
     </div>
     <div class="details">
-        <div ng-if="!selectedUser">
-            nie ma
+        <div ng-if="!selectedUser" class="nothing-selected">
+            Please select a person from the list.
         </div>
-        <div ng-if="selectedUser">
-            jest
+        <div ng-if="selectedUser" class="info">
+            <div class="container">
+                <div class="logo">
+                </div>
+                <div class="user">
+                    <div class="row">
+                        <div class="key">Name:</div>
+                        <div class="value">{{selectedUser.name + ' ' + selectedUser.surname}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="key">E-mail:</div>
+                        <div class="value">{{selectedUser.email}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="key">Age:</div>
+                        <div class="value">{{selectedUser.age}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

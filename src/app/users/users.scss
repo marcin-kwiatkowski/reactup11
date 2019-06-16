@@ -7,7 +7,6 @@
 
   .list {
     flex: 0 0 300px;
-    height: 100vh;
 
     .user {
       padding: 15px;
@@ -39,5 +38,49 @@
   .details {
     flex: 1;
     background-color: #ffe6e6;
+    height: calc(100vh - 80px);
+
+    .nothing-selected {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .info {
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+
+      .container {
+        display: flex;
+        flex-direction: row;
+
+        .logo {
+          flex: 0 0 130px;
+          background-image: url("../../assets/angularjs-logo.png");
+          background-repeat: no-repeat;
+          background-size: 100px;
+        }
+
+        .user {
+          flex: 1;
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            font-size: 20px;
+            padding: 10px;
+
+            .key {
+              flex: 0 0 200px;
+              font-weight: bold;
+            }
+
+            .value {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
