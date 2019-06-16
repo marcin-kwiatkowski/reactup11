@@ -7,6 +7,17 @@
 
   .list {
     flex: 0 0 300px;
+    height: 100vh;
+
+    .user {
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    ul {
+      overflow: scroll;
+      height: calc(100vh - 80px);
+    }
   }
 
   .details {

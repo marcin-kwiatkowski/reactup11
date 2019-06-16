@@ -17,5 +17,9 @@ import { getUsers } from './usersSelectors'
 
     module.controller('UsersCtrl', ($scope, $ngRedux) => {
         $scope.users = getUsers($ngRedux.getState())
+
+        $scope.test = user => {
+            console.error(user)
+        }
     })
 })();
