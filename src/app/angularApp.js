@@ -1,4 +1,9 @@
 import angular from 'angular'
+import ngRedux from 'ng-redux'
 
-const app = angular.module('angularApp', [])
+const dependencies = [
+    ngRedux
+]
+
+const app = angular.module('angularApp', dependencies)
 export default app

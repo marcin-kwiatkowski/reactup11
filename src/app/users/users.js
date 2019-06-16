@@ -1,10 +1,13 @@
-import UsersCtrl from './UsersCtrl'
 import angular from 'angular'
+import './users.scss'
+import { fetchUsers } from './usersActions'
+import { getUsers } from './usersSelectors'
 
 (function () {
     const module = angular.module('angularApp')
 
-    module.directive('users', () => {
+    module.directive('users', ($ngRedux) => {
+        $ngRedux.dispatch(fetchUsers())
         return {
             template: require('./users.html'),
             controller: 'UsersCtrl',
@@ -12,5 +15,7 @@ import angular from 'angular'
         }
     })
 
-    module.controller('UsersCtrl', UsersCtrl)
+    module.controller('UsersCtrl', ($scope, $ngRedux) => {
+        $scope.users = getUsers($ngRedux.getState())
+    })
 })();

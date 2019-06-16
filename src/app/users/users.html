@@ -1,6 +1,10 @@
-<div class="users-container">
+<div class="users-container" ng-controller="UsersCtrl">
     <div class="list">
-        list
+        <ul>
+            <li ng-repeat="user in users">
+                {{user.name + ' ' + user.surname}}
+            </li>
+        </ul>
     </div>
     <div class="details">
         details

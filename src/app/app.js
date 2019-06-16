@@ -1,4 +1,6 @@
 import './angularApp'
+
+import './store'
 import './users/users'
 
 import '../styles/reset.css'
