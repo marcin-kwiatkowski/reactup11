@@ -9,7 +9,7 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress --config webpack.config.js"
   },
   "dependencies": {
-    "angular": "1.7.9",
+    "angular": "1.8.0",
     "ng-redux": "4.4.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0"
